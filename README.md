@@ -45,7 +45,7 @@
 **Vagrant**使用box镜像创建虚拟机，box类似于docker image，box是提供一个预先配置好的环境，开箱即用。
 使用Vagrant创建虚拟机非常简单：
 
-```ruby
+```bash
 # 下载ubuntu 22.04的box文件到本地，并自动生成Vagrantfile
 vagrant init ubuntu/jammy64
 # 一键创建和启动虚拟机
@@ -55,7 +55,7 @@ vagrant up
 Vagrant默认从[HashiCorp's Vagrant Cloud box catalog](https://vagrantcloud.com/boxes/search)下载镜像，由于国内网络的原因，下载速度非常慢，并且它不像dockerHub，国内有整站的镜像。
 好在Ubuntu官方下载中心会发布基于ubuntu的box镜像(仅支持virtualbox)，因此我们可以从ubuntu的国内镜像中心下载。
 
-```ruby
+```bash
 # vagrant init boxname url
 vagrant init ubuntu/jammy64 
         \https://s3.jcloud.sjtu.edu.cn/899a892efef34b1b944a19981040f55b-oss01/rsync/ubuntu-cloud-images/2675059070fdea94648b15eb4f302d8771fe0fac
@@ -97,7 +97,7 @@ VBoxManage list hostonlyifs
 
 `Vagrantfile`中使用下面两个变量设置虚拟机的IP地址。
 
-```ruby
+```bash
 #ip地址从192.168.56.20的开始递增
 $ip_range   = "192.168.56."
 $ip_start   = 100
@@ -115,7 +115,7 @@ Vagrant创建的虚拟机总是将第一个网卡设置为网络地址转换`(NA
 NAT模式下，虚拟机只能单向访问外部网络(通常用来访问互联网)，虚拟机之间相互隔离，无法互相访问，每个虚拟机的IP都是`10.0.2.15`。
 我们在`Vagrantfile` 中通过`private_network`添加了一个`Host-Only`网络，虚拟机之间使用这个网络进行通信，宿主机也可以通过IP地址访问虚拟机。
 
-```ruby
+```bash
 master.vm.network "private_network", ip: $master_ip
 ```
 
