@@ -1,5 +1,7 @@
 # 前言
 
+工程地址：[dhwark/vagrant-easy_k8s (github.com)](https://github.com/dhwark/vagrant-easy_k8s)
+
 鸣谢：此项目来源于B站up主“一小时技术精讲”，在着手部署之前一定要先看视频！！！
 
 一：原工程中的Ubuntu镜像地址失效了，在我的folk工程中修改了镜像地址为上海交大的镜像地址。
@@ -16,14 +18,11 @@
 
 ![image.png](picture/kubectl_get_nodes.png)
 
-工程地址：[dhwark/vagrant-easy_k8s (github.com)](https://github.com/dhwark/vagrant-easy_k8s)
-
---------------------------------------------------------------------------------
-
 视频地址：[一键安装kubernetes_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV15P411F7Qv?p=1)
 
 原工程地址：[vagrant-all/vagrant-k8s · jeff-qiu/k8s-2hours - 码云 - 开源中国 (gitee.com)](https://gitee.com/jeff-qiu/k8s-2hours/tree/master/vagrant-all/vagrant-k8s)
 
+--------------------------------------------------------------------------------
 ### 1.准备工作：
 
 - **Vagrant 2.3.4**
