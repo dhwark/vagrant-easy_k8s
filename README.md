@@ -1,8 +1,24 @@
-前言：
+## 前言
 
-此项目来源于B站up主“一小时技术精讲”，在着手部署之前一定要先看视频！！！
+鸣谢：此项目来源于B站up主“一小时技术精讲”，在着手部署之前一定要先看视频！！！
 
+一：原工程中的Ubuntu镜像地址失效了，在我的folk工程中修改了镜像地址为上海交大的镜像地址。
 
+二：修改节点的时区为CST并开启同步，避免节点时间不一致无法加入集群。
+
+三：原工程中的IP段在我的机器上节点无法互相通信，如果你遇到同样的问题，请尝试修改IP段！
+
+**部署之前请确保你已经开启VT-x虚拟化，关闭“Windows功能”中的虚拟化平台以及hyper-v。**
+
+虽然此工程只需要用到少量vagrant命令，但还是建议你可以学习vagrant的基本用法再开始部署。
+
+**部署完成之后一定要在master节点上切换到root身份再查看集群状态！！！**
+
+![image.png](picture/kubectl_get_nodes.png)
+
+工程地址：[dhwark/vagrant-easy_k8s (github.com)](https://github.com/dhwark/vagrant-easy_k8s)
+
+--------------------------------------------------------------------------------
 
 视频地址：[一键安装kubernetes_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV15P411F7Qv?p=1)
 
@@ -43,12 +59,12 @@ Vagrant默认从[HashiCorp's Vagrant Cloud box catalog](https://vagrantcloud.com
 ```ruby
 # vagrant init boxname url
 vagrant init ubuntu/jammy64 
-        \https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/jammy/current/jammy-server-cloudimg-amd64-vagrant.box
+        \https://s3.jcloud.sjtu.edu.cn/899a892efef34b1b944a19981040f55b-oss01/rsync/ubuntu-cloud-images/2675059070fdea94648b15eb4f302d8771fe0fac
 ```
 
 ### 3.集群规划
 
-用户名：`root`   密码：`kubeadmin`
+用户名：`root`   密码：`123456`
 
 | **主机名**  | **IP地址**    | **类型**               |
 | ----------- | ------------- | ---------------------- |
